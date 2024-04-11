@@ -15,7 +15,8 @@ const Form = () =>{
                         width=''
                     />
                     </div>
-                    <button className="py-1 px-6 bg-red-800 rounded-full text-white ml-2 mt-1"
+                    <button onClick={(e)=>e.preventDefault()}
+                        className="py-1 px-6 bg-green-800 rounded-full text-white ml-2 mt-1 hover:scale-105 shadow-md shadow-green-950"
                     >+Add</button>
                 </form>
             </div>
