@@ -3,11 +3,10 @@
 
 const Form = () =>{
     return(
-        <>
             <div >
-                <form className="">
+                <form>
                     <div className="flex">
-                    <p className="font-bold">Amount:</p>
+                    <p className="font-bold">Unit:</p>
                     <input 
                         className=" border border-gray-400 w-12"
                         type="number" 
@@ -16,11 +15,10 @@ const Form = () =>{
                     />
                     </div>
                     <button onClick={(e)=>e.preventDefault()}
-                        className="py-1 px-6 bg-green-800 rounded-full text-white ml-2 mt-1 hover:scale-105 shadow-md shadow-green-950"
+                        className="py-1 px-6 bg-green-800 rounded-full text-white ml-2 mt-1 hover:scale-105 shadow-md shadow-green-950 duration-200"
                     >+Add</button>
                 </form>
             </div>
-        </>
     )
 }
 

@@ -3,12 +3,20 @@ import Navbar from './Components/NavBar/Navbar'
 import Cart from './Components/NavBar/Cart/Cart'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isCartOpen, setIsCartOpen] = useState(false)
+
+  const showCartModal = ()=>{
+    setIsCartOpen(true)
+  }
+
+  const hideCartModal = ()=>{
+    setIsCartOpen(false)
+  }
 
   return (
     <>
-      <Cart />
-      <Navbar />
+    {isCartOpen && <Cart onHideCart={hideCartModal}/>}
+      <Navbar onShowCart={showCartModal}/>
     </>
   )
 }
