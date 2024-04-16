@@ -38,11 +38,11 @@ const Meals = () => {
   return (
     <div>
       <MealsSummary />
-      <div className="bg-gray-300 mt-24 w-8/12 ml-auto mr-auto rounded-lg">
+      <div className="bg-white mt-24 w-8/12 ml-auto mr-auto rounded-lg pb-1">
         {dummyMeals.map((meals) => {
           return (
               <div
-                className="px-5 py-4 rounded-md shadow-md border-b-2 flex items-center justify-between"
+                className="px-5 py-4 mx-1 my-1 rounded-md flex items-center justify-between bg-gray-400 shadow-md shadow-gray-400"
                 key={Math.random()}
                 id={Math.random()}
               >
@@ -52,7 +52,7 @@ const Meals = () => {
                 <h1 className="text-red-600 text-lg">${meals.amount}</h1>
                 </div>
                 <div>
-                    <Form />
+                    <Form id={Math.random()} item={meals}/>
                 </div>
               </div>
 

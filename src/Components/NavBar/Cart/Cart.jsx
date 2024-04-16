@@ -1,21 +1,26 @@
 
+import { useContext } from "react";
 import Modal from "../UI/Modal";
+import CartContext from "../Store/cart-context";
 
 const Cart = ({onHideCart}) => {
-  const cartItems = [{ id: 1, name: "Biriyani", quantity: 2, price: 119 }].map(
-    (item) => {
-      return <p key={Math.random()}>{item.name}</p>;
-    }
-  );
+  const cartContext = useContext(CartContext);
+  console.log(cartContext)
+  const cartItems = cartContext.items.map((item)=>{
+     return <li key={Math.random()}>{item.name} {item.amount} {item.unit}</li>
+  })
 
+console.log(cartItems);
   return (
     <div>
       <Modal onClose={onHideCart}>
+        <ul>
         {cartItems}
+        </ul>
         
         <div className="flex justify-between items-center font-bold text-lg md:text-xl my-4">
-          <span>Total Amount</span>
-          <span>119</span>
+          <span>Total Amount:</span>
+          <span>Rs:{cartContext.totalAmount}</span>
         </div>
         <div className="text-right">
           <button onClick={onHideCart}
