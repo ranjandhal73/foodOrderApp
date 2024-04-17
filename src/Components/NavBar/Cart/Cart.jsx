@@ -5,16 +5,39 @@ import CartContext from "../Store/cart-context";
 
 const Cart = ({onHideCart}) => {
   const cartContext = useContext(CartContext);
-  console.log(cartContext)
+
+  const itemDecreamnetHandler = (itemId) =>{
+    cartContext.removeItem(itemId);
+  }
+
+  const itemIncreamnetHandler = (item,itemId) =>{
+    console.log("minus", itemId);
+    console.log("minus", item);
+    cartContext.addItem(item,itemId)
+    }
+
   const cartItems = cartContext.items.map((item)=>{
-     return <li key={Math.random()}>{item.name} {item.amount} {item.unit}</li>
+     return (
+        <div key={Math.random()} className="flex justify-between items-center shadow-md shadow-gray-400 px-3 py-3">
+            <li>
+              <div className="font-bold text-xl italic">{item.name} </div> 
+              <div className="flex gap-10">
+                <div className="text-red-700 font-semibold text-lg">Rs:{item.amount}</div>
+                <div className="font-semibold text-lg">x {item.unit}</div>
+              </div>
+            </li>
+            <div className="flex gap-2">
+            <button onClick={()=>itemDecreamnetHandler(item.id)} className="px-3 py- border border-red-700 rounded-md text-red-700 text-lg hover:bg-red-700 hover:text-white">-</button>
+            <button onClick={()=>itemIncreamnetHandler(item,item.id)} className="px-3 py- border border-green-700 rounded-md text-green-700 text-lg hover:bg-green-700 hover:text-white">+</button>
+            </div>
+       </div>
+     )
   })
 
-console.log(cartItems);
   return (
     <div>
       <Modal onClose={onHideCart}>
-        <ul>
+        <ul className="flex flex-col gap-2" >
         {cartItems}
         </ul>
         

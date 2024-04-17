@@ -3,31 +3,37 @@ import Form from "../Form/Form";
 
 const dummyMeals = [
   {
+    id: Math.random(),
     name: "Chhena Poda",
     desc: "Delicious sweet",
     amount: 60,
   },
   {
+    id: Math.random(),
     name: "Paneer Tikka",
     desc: "Spicy grilled cottage cheese",
     amount: 80,
   },
   {
+    id: Math.random(),
     name: "Chicken Biryani",
     desc: "Fragrant rice dish with chicken",
     amount: 120,
   },
   {
+    id: Math.random(),
     name: "Vegetable Pulao",
     desc: "Mixed vegetable rice",
     amount: 90,
   },
   {
+    id: Math.random(),
     name: "Gulab Jamun",
     desc: "Sweet syrupy dessert",
     amount: 40,
   },
   {
+    id: Math.random(),
     name: "Dahi Bara",
     desc: "Vada aalo and some spicy mixture",
     amount: 40,

@@ -8,8 +8,9 @@ const Form = (props) =>{
     const cartContext = useContext(CartContext)
     const addItemToCart = (e) =>{
         e.preventDefault();
-        cartContext.addItem({...props.item, unit: unit})
-    //    console.log(cartContext);
+        const unitValue = parseInt(unit)
+        cartContext.addItem(props.item, props.item.id, unitValue); // Pass unitValue to addItem
+
     }
     return(
             <div >

@@ -6,7 +6,6 @@ import { useContext,useState } from "react";
 function Navbar({onShowCart}){
     // useState(0)
     const totalItem = useContext(CartContext)
-    console.log(totalItem);
     return(
         <div className='pb-10' style={{backgroundColor: '#383838'}}>
                 <header className=" flex items-center justify-between py-4 px-40 bg-red-800 text-white">
